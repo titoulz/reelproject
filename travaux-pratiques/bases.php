@@ -101,6 +101,32 @@
             <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
             <div class="bg-black rounded-4 p-3 flex-fill">
                 <!-- Votre code -->
+                <table class="table table-dark table-striped">
+                    <thead>
+                    <tr>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Premium</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($comptes as $compte) : ?>
+                        <tr>
+                            <td><?= $compte['prenom'] ?></td>
+                            <td><?= $compte['nom'] ?></td>
+                            <td><?= $compte['email'] ?></td>
+                            <td><?= $compte['premium'] ? 'premium' : '  ' ?></td>
+                            <td><a href="#" class="btn btn-danger">Supprimer</a></td>
+                            <td><a href="#" class="btn btn-warning">Modifier</a></td>
+                            <? if ($compte['premium'] == false) { ?>
+                                <td><a href="#" class="btn btn-success">Premium</a></td>
+                            <? }
+                            else { ?>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
 
             </div>
         </div>
@@ -123,7 +149,18 @@
             <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
             <div class="bg-black rounded-4 p-3 flex-fill">
                 <!-- Votre code -->
+                <div class="card border-dark mb-3" style="max-width: 20rem;">
+                    <div class="card-header">Header</div>
+                    <div class="card-body">
+                        <h4 class="card-title"><?= $compte['prenom'] ?><?= $compte['nom'] ?></h4>
+                        <p class="card-text"><?= $compte['email'] ?></p>
+                       <p> <?= $compte['premium'] ? 'premium' : 'non premiumér  ' ?></p>
+                        <p><button type="button" class="btn btn-warning"> ✎  </button></p>
+                        <p><button type="button" class="btn btn-danger"> 🗑️  </button></p>
 
+                        <p><button type="button" class="btn btn-danger"> 🗑  </button></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
