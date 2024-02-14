@@ -60,7 +60,7 @@ $pays = ["France", "Italie", "Espagne", "Belgique"];
                 <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
                 <div class="bg-black rounded-4 p-3 flex-fill">
                     <!-- Votre code -->
-
+<?php foreach ($comptes as $compte)?>
                 </div>
             </div>
         </div>
