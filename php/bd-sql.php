@@ -15,7 +15,7 @@ require "config/db-config.php";
 /**
  * @var PDO $connexion
  */
-require "config/db-config.php";
+require "config/configdb.php";
 //préparer la requête SQL
 $requetesql = "SELECT COUNT(*) as nbetudiants FROM etudiant ";
 $requetePDO = $connexion->prepare($requetesql);
